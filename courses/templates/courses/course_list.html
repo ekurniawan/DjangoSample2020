@@ -5,9 +5,21 @@
 {% endblock title %}
 
 {% block content %}
-    {% for course in courses %}
-    <h2>{{ course.title }}</h2>
-    <p>{{ course.description }}</p>
-    {% endfor %}
+     <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="">Courses</a>
+        </li>
+        <li class="breadcrumb-item active">Course List</li>
+      </ol>
+
+      {% for course in courses %}
+      <h2>{{ course.title }}</h2>
+      <p>{{ course.description }}</p>
+      <hr/>
+      {% endfor %}
+
+
+   
 {% endblock content %}
 

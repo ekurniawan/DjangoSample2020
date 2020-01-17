@@ -1,0 +1,13 @@
+{% extends 'sblayout.html' %}
+
+{% block title %}
+Step Details
+{% endblock title %}
+
+{% block content %}
+<article>
+    <h2>{{ step.course.title }}</h2>
+    <h4>{{ step.title }}</h4>
+    {{ step.content|linebreaks }}
+</article>
+{% endblock content %}

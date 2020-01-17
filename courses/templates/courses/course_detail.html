@@ -1,16 +1,18 @@
 {% extends 'sblayout.html' %}
 
 {% block title %}
-Detail Course
+{{ course.title }}
 {% endblock title %}
 
 {% block content %}
 <article>
     <h2>{{ course.title }}</h2>
     {{ course.description }}
+    <p>Ada {{ course.step_set.count }} step pada Course ini: 
+    {{ course.step_set.all|join:", " }}</p>
     <section>
         {% for step in course.step_set.all %}
-            <h4>{{ step.title }}</h4>
+            <h4><a href="{% url 'courses:step' course_pk=step.course.pk step_pk=step.pk %}">{{ step.title }}</a></h4>
             {{ step.description }}
         {% endfor %}
     </section>
